@@ -1,0 +1,45 @@
+/* You are given an integer array height of length n. 
+There are n vertical lines drawn such that the two endpoints
+ of the ith line are (i, 0) and (i, height[i]).
+
+Find two lines that together with the x-axis form a container, 
+such that the container contains the most water.
+
+Return the maximum amount of water a container can store.
+
+Notice that you may not slant the container.
+
+*/
+
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+const maxArea = function (height) {
+  //i: array of ints
+  //o: int
+  let bigArea = 0;
+  //create left pointer
+  let left = 0;
+  //create right pointer
+  let right = height.length - 1;
+
+  //run until left and right meet
+  while (left < right) {
+    //set maxHeight of current area
+    const maxHeight = Math.min(height[left], height[right]);
+    //calculate current area
+    const currentArea = maxHeight * (right - left);
+    //update biggest area
+    bigArea = Math.max(bigArea, currentArea);
+    //move left or right pointer depending on which is bigger
+    if (height[left] < height[right]) {
+      left++;
+    } else {
+      right--;
+    }
+  }
+  return bigArea;
+};
+console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])); //49
+// console.log(maxArea([1, 1])); //1
