@@ -15,31 +15,6 @@ Notice that you may not slant the container.
  * @param {number[]} height
  * @return {number}
  */
-const maxArea = function (height) {
-  //i: array of ints
-  //o: int
-  let bigArea = 0;
-  //create left pointer
-  let left = 0;
-  //create right pointer
-  let right = height.length - 1;
-
-  //run until left and right meet
-  while (left < right) {
-    //set maxHeight of current area
-    const maxHeight = Math.min(height[left], height[right]);
-    //calculate current area
-    const currentArea = maxHeight * (right - left);
-    //update biggest area
-    bigArea = Math.max(bigArea, currentArea);
-    //move left or right pointer depending on which is bigger
-    if (height[left] < height[right]) {
-      left++;
-    } else {
-      right--;
-    }
-  }
-  return bigArea;
-};
+const maxArea = function (height) {};
 console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])); //49
 // console.log(maxArea([1, 1])); //1

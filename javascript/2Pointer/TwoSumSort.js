@@ -9,21 +9,20 @@ const twoSum = function (numbers, target) {
   //i: array, int
   //o: indexes of array
 
-  //create two pointers
-  //initialize left to 0
-  let left = 0;
-  //right to numbers.length -1
-  let right = numbers.length - 1;
+  let l = 0,
+    r = numbers.length - 1;
 
-  while (left < right) {
-    //create variable sum, assign it value of adding array at left and right most index positions
-    let sum = numbers[left] + numbers[right];
-    //if sum is strictly equal to our target, return an array of left and right, incrementing both by 1
-    if (sum === target) return [left + 1, right + 1];
-    //if sum is less than target, increment left pointer
-    if (sum < target) left++;
-    //if sum is greater than target decrement right counter
-    if (sum > target) right--;
+  while (l < r) {
+    let sum = numbers[l] + numbers[r];
+    console.log(sum);
+
+    if (sum === target) {
+      return [l + 1, r + 1];
+    } else if (sum < target) {
+      l++;
+    } else {
+      r--;
+    }
   }
 };
 console.log(twoSum([2, 7, 11, 15], 9)); //[1,2]

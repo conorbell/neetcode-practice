@@ -32,8 +32,77 @@ function Node(value) {
  * 5. Repeat
  */
 
-const reverseLinkedList = (head) => {
-  if (!head) return head;
-};
+const reverseLinkedList = (head) => {};
+
+/* 
+--FIRST ITERATION--
+next Node {
+  value: 2,
+  next: Node { value: 3, next: Node { value: 4, next: [Object] } } }
+
+current.next null
+
+previous Node { value: 1, next: null }
+
+current Node {
+  value: 2,
+  next: Node { value: 3, next: Node { value: 4, next: [Object] } } }
+------------------------------------------------------------------------
+next Node {
+  value: 3,
+  next: Node { value: 4, next: Node { value: 5, next: null } } }
+
+current.next Node { value: 1, next: null }
+
+previous Node { value: 2, next: Node { value: 1, next: null } }
+
+current Node {
+  value: 3,
+  next: Node { value: 4, next: Node { value: 5, next: null } } }
+------------------------------------------------------------------------
+next Node { value: 4, next: Node { value: 5, next: null } }
+
+current.next Node { value: 2, next: Node { value: 1, next: null } }
+
+previous Node {
+  value: 3,
+  next: Node { value: 2, next: Node { value: 1, next: null } } }
+
+current Node { value: 4, next: Node { value: 5, next: null } }
+------------------------------------------------------------------------
+next Node { value: 5, next: null }
+
+current.next Node {
+  value: 3,
+  next: Node { value: 2, next: Node { value: 1, next: null } } }
+
+previous Node {
+  value: 4,
+  next: Node { value: 3, next: Node { value: 2, next: [Object] } } }
+
+current Node { value: 5, next: null }
+------------------------------------------------------------------------
+next null
+current.next Node {
+  value: 4,
+  next: Node { value: 3, next: Node { value: 2, next: [Object] } } }
+previous Node {
+  value: 5,
+  next: Node { value: 4, next: Node { value: 3, next: [Object] } } }
+current null
+
+*/
+
+let one = new Node(1);
+
+let two = new Node(2);
+one.next = two;
+let three = new Node(3);
+two.next = three;
+let four = new Node(4);
+three.next = four;
+let five = new Node(5);
+four.next = five;
+console.log(reverseLinkedList(one));
 
 module.exports = { Node, reverseLinkedList };

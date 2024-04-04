@@ -6,38 +6,29 @@ Notice that the solution set must not contain duplicate triplets.
 const threeSum = function (nums) {
   //i: array
   //o: array
-  const result = [];
 
-  //sort array
+  const result = [];
   nums.sort((a, b) => a - b);
-  //iterate through nums
-  //setting our conditional to nums.length -2
-  //allows us to have 2 extra spaces after i
-  for (let i = 0; i < nums.length - 2; i++) {
-    //check if current index is greater 0
-    //and if its strictly equal to the previous element
-    //if so continue to the next iteration, skip whole while loop
-    if (i > 0 && nums[i] === nums[i - 1]) continue;
-    //initialize two pointers
-    //left will always be after i
-    let left = i + 1;
-    let right = nums.length - 1;
-    //while left is less than right
-    while (left < right) {
-      //create sum variable
-      const sum = nums[i] + nums[left] + nums[right];
-      //if sum is strictly equal to 0
-      if (sum === 0) {
-        result.push([nums[i], nums[left], nums[right]]);
-        //skip duplicates for left and right pointers
-        while (left < right && nums[left] === nums[left + 1]) left++;
-        while (left < right && nums[right] === nums[right - 1]) right--;
-        left++;
-        right--;
-      } else if (sum < 0) {
-        left++;
-      } else {
-        right--;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== nums[i - 1]) {
+      let left = i + 1,
+        right = nums.length - 1;
+
+      while (left < right) {
+        const currentSum = nums[i] + nums[left] + nums[right];
+
+        if (currentSum === 0) {
+          result.push([nums[i], nums[left], nums[right]]);
+          while (nums[left] == nums[left + 1]) left++;
+          while (nums[right] == nums[right - 1]) right--;
+          left++;
+          right--;
+        } else if (currentSum < 0) {
+          left++;
+        } else if (currentSum > 0) {
+          right--;
+        }
       }
     }
   }

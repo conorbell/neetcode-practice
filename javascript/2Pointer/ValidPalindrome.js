@@ -11,18 +11,14 @@ const isPalindrome = function (s) {
   //remove non-alphanumeric characters from string
   s = s.replace(/[\W _]/gi, '').toLowerCase();
   //create two pointers
-  let left = 0;
-  let right = s.length - 1;
+  let l = 0,
+    r = s.length - 1;
 
-  //while left is less than right
-  while (left < right) {
-    //if string at right does not match string at left return false
-    if (s[right] !== s[left]) return false;
-    //else increment and decrement both
-    left++;
-    right--;
+  while (l < r) {
+    if (s[l] !== s[r]) return false;
+    l++;
+    r--;
   }
-  //return true if we make it through the whole word
   return true;
 };
 //test cases

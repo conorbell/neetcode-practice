@@ -13,6 +13,34 @@ function ListNode(val, next) {
 var mergeTwoLists = function (list1, list2) {
   //input: 2 linked lists
   //output: 1 linked list
+
+  //create dummy, along with two pointers and a previous value
+  let dummy = new ListNode(-Infinity),
+    current1 = list1,
+    current2 = list2,
+    prev = dummy;
+
+  while (current1 && current2) {
+    //check if current1.val is greater than current2.val
+
+    if (current1.val <= current2.val) {
+      prev.next = current1;
+
+      prev = current1;
+
+      current1 = current1.next;
+    } else {
+      prev.next = current2;
+      prev = current2;
+
+      current2 = current2.next;
+    }
+  }
+
+  if (current1) prev.next = current1;
+  if (current2) prev.next = current2;
+
+  return dummy.next;
 };
 
 const list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
