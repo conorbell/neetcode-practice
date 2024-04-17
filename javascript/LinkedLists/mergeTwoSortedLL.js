@@ -10,13 +10,13 @@ function ListNode(val, next) {
   this.next = next === undefined ? null : next;
 }
 
-var mergeTwoLists = function (list1, list2) {
-  //input: 2 linked lists
-  //output: 1 linked list
-};
+var mergeTwoLists = function (list1, list2) {};
+
+// const list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+// const list2 = new ListNode(0, new ListNode(3), new ListNode(5));
 
 const list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
-const list2 = new ListNode(0, new ListNode(3), new ListNode(4));
+const list2 = new ListNode(0, new ListNode(3, new ListNode(4)));
 
 console.log(mergeTwoLists(list1, list2));
 

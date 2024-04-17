@@ -6,22 +6,7 @@ substring
 
 */
 
-var lengthOfLongestSubstring = function (s) {
-  let winStart = 0,
-    curr = 0,
-    max = 0,
-    set = new Set();
-
-  while (curr < s.length) {
-    if (set.has(s[curr])) {
-      set.delete(s[winStart++]);
-    } else {
-      set.add(s[curr++]);
-      max = Math.max(max, set.size);
-    }
-  }
-  return max;
-};
+var lengthOfLongestSubstring = function (s) {};
 
 // console.log(lengthOfLongestSubstring('abcabcbb')); //3
 // console.log(lengthOfLongestSubstring('bbbbb')); //1

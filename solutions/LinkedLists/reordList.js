@@ -25,6 +25,7 @@ var reorderList = function (head) {
 
   while (second) {
     let temp1 = first.next;
+
     let temp2 = second.next;
 
     first.next = second;

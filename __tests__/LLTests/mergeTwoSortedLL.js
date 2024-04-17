@@ -13,10 +13,10 @@ describe('mergeTwoLists', () => {
     const list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
     const list2 = new ListNode(0, new ListNode(3, new ListNode(4)));
 
-    const mergedList = mergeTwoLists(list1, list2);
+    let mergedList = mergeTwoLists(list1, list2);
 
     // Define the expected merged list
-    const expectedMergedList = new ListNode(
+    let expectedMergedList = new ListNode(
       0,
       new ListNode(
         1,

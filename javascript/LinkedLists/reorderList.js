@@ -14,16 +14,19 @@ You may not modify the values in the list's nodes. Only nodes themselves may be 
 
 */
 var reorderList = function (head) {
-  //slow fast pointers
+  //base case
+  if (!head) return head;
 };
+/*
+first = 1 -> 2 -> 3 -> null
+second = 5 -> 4 -> null
 
-const list1 = new ListNode(
+*/
+const h = new ListNode(
   1,
-  new ListNode(2, new ListNode(3, new ListNode(4)))
+  new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))
 );
-// let list2 = new ListNode(10, new ListNode(3, new ListNode(4)));
 
-console.log(reorderList(list1));
-// console.log(reorderList(list2));
+console.log(reorderList(h));
 
-module.exports = { reorderList };
+module.exports = { reorderList, ListNode };

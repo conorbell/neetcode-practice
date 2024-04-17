@@ -32,7 +32,9 @@ function Node(value) {
  * 5. Repeat
  */
 
-const reverseLinkedList = (head) => {};
+const reverseLinkedList = (head) => {
+  //two pointers and a dummy
+};
 
 /* 
 --FIRST ITERATION--
