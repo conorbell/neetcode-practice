@@ -36,28 +36,12 @@ const characterReplacement = (s, k) => {
 
     map[c] = (map[c] || 0) + 1;
 
-    console.log(`Iteration ${r + 1}:`);
-    console.log('Window:', s.substring(l, r + 1));
-    console.log('maxCount:', maxCount);
-    console.log('Left Pointer:', l);
-    console.log('Right Pointer:', r);
-    console.log('max:', max);
     maxCount = Math.max(maxCount, map[c]);
 
     while (r - l + 1 - maxCount > k) {
-      console.log('Shrinking Window...');
-      console.log('Shrinking Window...');
-      console.log('Current Condition:', `${r} - ${l} + 1 - ${maxCount} > ${k}`);
-      console.log('Window before shrinking:', s.substring(l, r + 1));
       map[s[l]] -= 1;
-      l += 1;
-      console.log('Window after shrinking:', s.substring(l, r + 1));
-      console.log('Shrinking Window...');
-      console.log('Current Condition:', `${r} - ${l} + 1 - ${maxCount} > ${k}`);
-      console.log('Window before shrinking:', s.substring(l, r + 1));
     }
     max = Math.max(max, r - l + 1);
-    console.log('-------------------------');
   }
   return max;
 };

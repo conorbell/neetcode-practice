@@ -3,41 +3,17 @@ function ListNode(val, next) {
   this.next = next === undefined ? null : next;
 }
 
-// const reverseList = (head) => {
-//   let curr = head,
-//     next = head,
-//     prev = null;
-
-//   while (curr) {
-//     next = next.next;
-
-//     curr.next = prev;
-//     prev = curr;
-//     curr = next;
-//   }
-//   return prev;
-// };
-
 var removeNthFromEnd = function (head, n) {
-  let dummy = new ListNode(0),
-    fast = dummy,
-    slow = dummy;
+  let dummy = new ListNode(0);
 
   dummy.next = head;
 
-  //shift fast pointer forward
-  for (let i = 1; i <= n; i++) {
+  let slow = dummy,
+    fast = dummy;
+
+  for (let i = 1; i <= n + 1; i++) {
     fast = fast.next;
   }
-
-  //shift slow pointer forward
-  while (fast) {
-    fast = fast.next;
-    slow = slow.next;
-  }
-
-  slow.next = slow.next.next;
-  return dummy.next;
 };
 
 const h = new ListNode(
