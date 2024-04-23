@@ -3,23 +3,17 @@ function ListNode(val, next) {
   this.next = next === undefined ? null : next;
 }
 
-const hasCycle = (head) => {};
+const hasCycle = (head) => {
+  let fast = head.next,
+    slow = head;
 
-const h = new ListNode(3, new ListNode(2, new ListNode(0, new ListNode(-4))));
+  while (fast && fast.next) {
+    if (slow === fast) return true;
+    fast = fast.next.next;
 
-console.log(hasCycle(h));
-
-/* 
-
-
-*/
-
-const h2 = new ListNode(1, new ListNode(2));
-
-console.log(hasCycle(h2));
-
-const h3 = new ListNode(1);
-
-console.log(hasCycle(h3));
+    slow = slow.next;
+  }
+  return false;
+};
 
 module.exports = { hasCycle, ListNode };

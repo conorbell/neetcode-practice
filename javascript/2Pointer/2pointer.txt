@@ -1,0 +1,5 @@
+The two pointer technique is a means of a traversing an array(often sorted, but depending on the challenge it doesn't have to be!) or a linked list
+
+There are two types of two pointer techniques
+1. Left and right - starting on opposite ends of your list 
+2. fast and slow(tortoise and the hare) - one pointer moves at a slower pace while the other moves twice as fast
