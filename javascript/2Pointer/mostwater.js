@@ -17,6 +17,6 @@ Notice that you may not slant the container.
  */
 const maxArea = function (height) {};
 console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])); //49
-// console.log(maxArea([1, 1])); //1
+console.log(maxArea([1, 1])); //1
 
 module.exports = { maxArea };
