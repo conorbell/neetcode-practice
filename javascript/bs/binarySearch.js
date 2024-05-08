@@ -5,9 +5,8 @@ You must write an algorithm with O(log n) runtime complexity. */
 const search = (nums, target) => {
   //i: array of nums, num
   //o: index position
-
-  let lo = 0;
-  let hi = nums.length;
+  let lo = 0,
+    hi = nums.length;
 
   do {
     let mid = Math.floor(lo + (hi - lo) / 2);

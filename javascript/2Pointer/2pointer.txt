@@ -1,5 +1,20 @@
-The two pointer technique is a means of a traversing an array(often sorted, but depending on the challenge it doesn't have to be!) or a linked list
+The two pointer technique is a means of a traversing an array(often sorted, but depending on the challenge it doesn't have to be!) of a linked list
 
 There are two types of two pointer techniques
-1. Left and right - starting on opposite ends of your list 
-2. fast and slow(tortoise and the hare) - one pointer moves at a slower pace while the other moves twice as fast
+1. Left and right - starting on opposite ends of your list
+Some good steps to follow generally
+
+    a. initialize left at 0 and right at length -1. We use length - 1 to account for 0 indexing
+    b. iteration - while left < right etc, how do we make the pointers meet or cross one another?
+    c. Pointer movement 
+        i. you can move both pointers inward left++, right --
+        ii. you can move one while leaving the other fixed. This is contingent upon any conditional logic that may be needed. 
+
+
+2. fast and slow(tortoise and the hare) - one pointer moves at a slower pace while the other moves twice as fast. This is great for linked lists in the event you aren't provided the tail. 
+
+    a. initialize two pointers, slow and fast, to the head of the linked list 
+        i. initialize fast to head or head.next depends on the context of the challenge, initializing it to head.next will make fast twice as fast as the slow pointer. Typically 2x speed is good for efficiently detecting cycles or finding the midpoint, however if you need to be more methodical and take smaller steps then you can simply set it to head. 
+    b. pointer movement - inside a loop advance slow pointer by one step and and the pointer by two steps
+    c. termination condition for the loop is usually determined on whether fast is null or not. 
+    d. 
