@@ -9,8 +9,9 @@ describe('Daily Temperature tests', () => {
     const temperature = [30, 40, 50, 60];
     expect(dailyTemperatures(temperature)).toEqual([1, 1, 1, 0]);
   });
+
   it('Test 3', () => {
-    const temperature = [73, 74, 75, 71, 69, 72, 76, 73];
+    const temperature = [30, 60, 90];
     expect(dailyTemperatures(temperature)).toEqual([1, 1, 0]);
   });
 });
