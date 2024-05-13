@@ -7,31 +7,7 @@
 // // Every close bracket has a corresponding open bracket of the same type. */
 
 // // //declare func 'isValid'
-const isValid = (s) => {
-  //i: string
-  //o: boolean
-
-  //initialize empty stack
-  const stack = [];
-
-  for (let i = 0; i < s.length; i++) {
-    switch (s[i]) {
-      case (s[i] = '('):
-        stack.push(')');
-        break;
-      case (s[i] = '['):
-        stack.push(']');
-        break;
-      case (s[i] = '{'):
-        stack.push('}');
-        break;
-      default:
-        if (s[i] !== stack.pop()) return false;
-    }
-  }
-
-  return stack.length === 0;
-};
+const isValid = (s) => {};
 console.log(isValid('()')); //t
 console.log(isValid('()[]{}')); //t
 console.log(isValid('(]')); //f

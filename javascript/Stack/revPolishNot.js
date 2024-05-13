@@ -20,30 +20,6 @@ stack - [+,1,2]
 const evalRPN = function (tokens) {
   //i: array of strings
   //o: int
-  console.log(tokens);
-
-  //approach-stack
-  //how do stacks work? first in last out
-  const stack = [];
-
-  for (let i = 0; i < tokens.length; i++) {
-    let char = tokens[i];
-
-    if (char === '+') {
-      stack.push(stack.pop() + stack.pop());
-    } else if (char === '-') {
-      const [a, b] = [stack.pop(), stack.pop()];
-      stack.push(b - a);
-    } else if (char === '*') {
-      stack.push(stack.pop() * stack.pop());
-    } else if (char === '/') {
-      const [a, b] = [stack.pop(), stack.pop()];
-      stack.push((b / a) | 0);
-    } else {
-      stack.push(char * 1);
-    }
-  }
-  return stack.pop();
 };
 console.log(evalRPN(['2', '1', '+', '3', '*'])); //9
 console.log(evalRPN(['4', '13', '5', '/', '+'])); //6
