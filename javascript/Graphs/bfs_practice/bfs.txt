@@ -1,0 +1,25 @@
+What is BFS? 
+
+Breadth first search is a traversal algorithim that visits all nodes in a graph or tree in level-order, meaning it visits all nodes at a given depth before moving on to the next depth. To implement BFS in JavaScript, we typically use a queue data structure to keep track of the nodes we need to visit next 
+
+Common uses: Pathfinding, connected components, shortest path problems in graphs, cycle detection, topological sorting, level order traversal of binary trees, network routing
+
+BFS traversal for a graph
+1. BFS visits all nodes at a given depth 
+2. Use a queue data structure, which is FIFO
+    a. the queue holds nodes that are to be processed in the order they were discovered 
+3. Create a visited set 
+    a. used to keep track of nodes that have already been visited
+4. initialize results array 
+    a. stores the order in which the nodes were visited 
+
+Steps: 
+1. Enqueue the starting into a queue and mark it as visited 
+2. While the queue is not empty 
+    a. dequeue a node from the queue and visit it 
+    b. For each unvisited neighbor of the dequeued node: 
+        i. enqueue the neighbor into the queue 
+        ii. mark the neighbor as visited 
+
+Time complexity of BFS is O(V + E) where V is the number of vertices and E is the number of edges in the graph 
+Space complexity of BFS is O(V) as it uses a queue to keep track of the vertices that need to be visited. 
