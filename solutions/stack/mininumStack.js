@@ -38,7 +38,6 @@ MinStack.prototype.pop = function () {
  * @return {number}
  */
 MinStack.prototype.top = function () {
-  console.log(this.stack[this.length - 1]);
   return this.stack[this.length - 1];
 };
 
